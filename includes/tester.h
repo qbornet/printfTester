@@ -6,7 +6,7 @@
 /*   By: qbornet <qbornet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 14:36:17 by qbornet           #+#    #+#             */
-/*   Updated: 2021/11/26 19:36:07 by qbornet          ###   ########.fr       */
+/*   Updated: 2021/11/26 22:37:13 by qbornet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,8 @@ void	ft_return_printf_7(void);
 void	ft_return_printf_8(void);
 void	ft_return_printf_9(void);
 void	ft_return_printf_10(void);
+void	ft_printf_c_1(void);
+void	ft_printf_c_2(void);
+void	ft_printf_c_3(void);
+void	ft_printf_c_4(void);
 #endif

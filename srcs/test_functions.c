@@ -6,10 +6,11 @@
 /*   By: qbornet <qbornet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 16:09:47 by qbornet           #+#    #+#             */
-/*   Updated: 2021/11/26 19:29:45 by qbornet          ###   ########.fr       */
+/*   Updated: 2021/11/26 22:36:45 by qbornet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <tester.h>
+#include <string.h>
 #include <ft_printf.h>
 extern int	g_pid;
 
@@ -133,6 +134,52 @@ void	ft_return_printf_10(void)
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("\t\n\v\r\fiqwerty\r\0");
 	if (ret == 13)
+		exit(SUCCESS);
+	exit(FAIL);
+}
+
+void	ft_printf_c_1(void)
+{
+	int		pid, ret;
+	char	c = 'a';
+
+	FORK_RAISE(g_pid, pid);
+	ret = ft_printf("%c\nqwerty", c);
+	if (ret == 9)
+		exit(SUCCESS);
+	exit(FAIL);
+}
+
+void	ft_printf_c_2(void)
+{
+	int		pid, ret;
+	char	c = L'-';
+
+	FORK_RAISE(g_pid, pid);
+	ret = ft_printf("%c", c);
+	if (ret == 1)
+		exit(SUCCESS);
+	exit(FAIL);
+}
+
+void	ft_printf_c_3(void)
+{
+	int		pid, ret;
+
+	FORK_RAISE(g_pid, pid);
+	ret = ft_printf("%c", 128);
+	if (ret == 1)
+		exit(SUCCESS);
+	exit(FAIL);
+}
+
+void	ft_printf_c_4(void)
+{
+	int		pid, ret;
+
+	FORK_RAISE(g_pid, pid);
+	ret = ft_printf("%c", 255);
+	if (ret == 1)
 		exit(SUCCESS);
 	exit(FAIL);
 }
