@@ -6,7 +6,7 @@
 /*   By: qbornet <qbornet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 16:09:47 by qbornet           #+#    #+#             */
-/*   Updated: 2021/11/26 22:36:45 by qbornet          ###   ########.fr       */
+/*   Updated: 2021/11/27 09:14:22 by qbornet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <tester.h>
@@ -180,6 +180,89 @@ void	ft_printf_c_4(void)
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("%c", 255);
 	if (ret == 1)
+		exit(SUCCESS);
+	exit(FAIL);
+}
+
+void	ft_printf_c_5(void)
+{
+	int		pid, ret;
+
+	FORK_RAISE(g_pid, pid);
+	ret = ft_printf("%c", 0);
+	if (ret == 1)
+		exit(SUCCESS);
+	exit(FAIL);
+}
+
+void	ft_printf_s_1(void)
+{
+	int		pid, ret;
+	char	*s = "Yolo";
+
+	FORK_RAISE(g_pid, pid);
+	ret = ft_printf("%s", s);
+	if (ret == 4)
+		exit(SUCCESS);
+	exit(FAIL);
+}
+
+void	ft_printf_s_2(void)
+{
+	int		pid, ret;
+	char	*s = NULL;
+
+	FORK_RAISE(g_pid, pid);
+	ret = ft_printf("%s", s);
+	if (ret == 6)
+		exit(SUCCESS);
+	exit(FAIL);
+}
+
+void	ft_printf_s_3(void)
+{
+	int		pid, ret;
+	char	*s = "";
+
+	FORK_RAISE(g_pid, pid);
+	ret = ft_printf("%s", s);
+	if (ret == 0)
+		exit(SUCCESS);
+	exit(FAIL);
+}
+
+void	ft_printf_s_4(void)
+{
+	int		pid, ret;
+	char	*s = "\u00A1\u00A2\xde\xfe";
+
+	FORK_RAISE(g_pid, pid);
+	ret = ft_printf("%s", s);
+	if (ret == 6)
+		exit(SUCCESS);
+	exit(FAIL);
+}
+
+void	ft_printf_s_5(void)
+{
+	int		pid, ret;
+	char	*s = "¡™£¢∞§¶•ªº";
+
+	FORK_RAISE(g_pid, pid);
+	ret = ft_printf("%s", s);
+	if (ret == 23)
+		exit(SUCCESS);
+	exit(FAIL);
+}
+
+void	ft_printf_s_6(void)
+{
+	int		pid, ret;
+	char	*s = "\t\b\r\n\v kekw";
+
+	FORK_RAISE(g_pid, pid);
+	ret = ft_printf("%s", s);
+	if (ret == 10)
 		exit(SUCCESS);
 	exit(FAIL);
 }
