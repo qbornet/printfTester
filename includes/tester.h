@@ -6,20 +6,39 @@
 /*   By: qbornet <qbornet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 14:36:17 by qbornet           #+#    #+#             */
-/*   Updated: 2021/11/27 09:17:18 by qbornet          ###   ########.fr       */
+/*   Updated: 2021/11/28 08:04:39 by qbornet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TESTER_H
 # define TESTER_H
+# include "ft_printf.h"
+# include <stdio.h>
+# include <string.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <sys/wait.h>
+# include <fcntl.h>
+
+# ifdef __APPLE__
+# define MACOS 1
+# elif __linux__
+# define LINUX 1
+# endif
+
+# define CLOSE_OUT freopen("/dev/null/", "w", stdout);
+# define OPEN_OUT freopen("/dev/tty", "w", stdout);
 # define SUCCESS 10
 # define FAIL 1
 # define OK " \e[1;38;5;10mOK\e[0m"
 # define KO " \e[1;38;5;9mKO\e[0m"
 # define ALIGN "\e[20G:"
 # define SHOW_RES(status) \
+	OPEN_OUT; \
 	if (WIFEXITED(status) && (WEXITSTATUS(status) != 0)) \
 		ft_puts((WEXITSTATUS(status) == SUCCESS) ? OK : KO); \
+	else if (WEXITSTATUS(status) == 0)\
+		ft_puts("child process exited with status equal to 0, creation failed"); \
 	else \
 		ft_puts(KO)
 # define FORK_RAISE(g_pid, pid) \
@@ -30,12 +49,6 @@
 		g_pid = pid; \
 		return ; \
 	}
-# include <stdio.h>
-# include <string.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <sys/wait.h>
-
 void	ft_puts(char *s);
 void	ft_putc(char c);
 void	ft_return_printf_1(void);
@@ -59,4 +72,24 @@ void	ft_printf_s_3(void);
 void	ft_printf_s_4(void);
 void	ft_printf_s_5(void);
 void	ft_printf_s_6(void);
+void	ft_printf_s_7(void);
+void	ft_printf_p_1(void);
+void	ft_printf_p_2(void);
+void	ft_printf_p_3(void);
+void	ft_printf_p_4(void);
+void	ft_printf_di_1(void);
+void	ft_printf_di_2(void);
+void	ft_printf_di_3(void);
+void	ft_printf_di_4(void);
+void	ft_pritnf_u_1(void);
+void	ft_pritnf_u_2(void);
+void	ft_pritnf_u_3(void);
+void	ft_printf_x_1(void);
+void	ft_printf_x_2(void);
+void	ft_printf_x_3(void);
+void	ft_printf_x_4(void);
+void	ft_printf_X_1(void);
+void	ft_printf_X_2(void);
+void	ft_printf_X_3(void);
+void	ft_printf_X_4(void);
 #endif
