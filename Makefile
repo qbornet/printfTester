@@ -14,7 +14,7 @@ CFLAGS = -Wall -Werror -Wextra -I ./includes -I .. $(addprefix -I, $(shell find 
 %.o:	%.c checkmakefile
 	make -C ..
 	$(CC) $(CFLAGS) -c $< -o $@
-	echo "\e[4m$<\e[0m\e[30G\e[1;38;5;11m>\e[0m	\e[1;38;5;232m[\e[0m\e[1;38;5;11m$@\e[0m\e[1;38;5;232m]\e[0m"
+	echo "\e[4m$<\e[0m\e[30G\e[1;38;5;11m>\e[0m	\e[1;38;5;12m[\e[0m\e[1;38;5;11m$@\e[0m\e[1;38;5;12m]\e[0m"
 
 $(NAME):	$(OBJS)
 	$(CC) $(CFLAGS) -L.. -lftprintf $(OBJS) -o $@
