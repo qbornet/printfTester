@@ -6,7 +6,7 @@
 /*   By: qbornet <qbornet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 16:09:47 by qbornet           #+#    #+#             */
-/*   Updated: 2021/11/29 21:02:38 by qbornet          ###   ########.fr       */
+/*   Updated: 2021/11/29 21:28:50 by qbornet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <tester.h>
@@ -595,6 +595,61 @@ void	ft_printf_X_4(void)
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("%X", nbr);
 	retr = printf("%X", nbr);
+	if (ret == retr)
+		exit(SUCCESS);
+	exit(FAIL);
+}
+
+void	ft_printf_mix_1(void)
+{
+	int		pid, ret, retr;
+
+	CLOSE_OUT;
+	FORK_RAISE(g_pid, pid);
+	ret = ft_printf("%c, %p, %d", 'a' + 256, NULL, INT_MIN);
+	retr = printf("%c, %p, %d", 'a' + 256, NULL, INT_MIN);
+	if (ret == retr)
+		exit(SUCCESS);
+	exit(FAIL);
+}
+
+void	ft_printf_mix_2(void)
+{
+	int		pid, ret, retr;
+
+	CLOSE_OUT;
+	FORK_RAISE(g_pid, pid);
+	ret = ft_printf("%% %c %d %i %x", L'a', 1234, INT_MAX, 42);
+	retr = printf("%% %c %d %i %x", L'a', 1234, INT_MAX, 42);
+	if (ret == retr)
+		exit(SUCCESS);
+	exit(FAIL);
+}
+
+void	ft_printf_mix_3(void)
+{
+	int		pid, retr, ret;
+	char	*str = "Hello";
+
+	FORK_RAISE(g_pid, pid);
+	fclose(stdout);
+	ret = ft_printf("%s %c %s", str, 'a', str);
+	retr = printf("%s %c %s", str, 'a', str);
+	if (ret == retr)
+		exit(SUCCESS);
+	else if (ret >= -1)
+		exit(15);
+	exit(FAIL);
+}
+
+void	ft_printf_mix_4(void)
+{
+	int		pid, retr, ret;
+
+	CLOSE_OUT;
+	FORK_RAISE(g_pid, pid);
+	ret = ft_printf("%x %X %d %i %u", 42, 42, INT_MIN, INT_MAX, -1);
+	retr = printf("%x %X %d %i %u", 42, 42, INT_MIN, INT_MAX, -1);
 	if (ret == retr)
 		exit(SUCCESS);
 	exit(FAIL);

@@ -6,13 +6,14 @@
 /*   By: qbornet <qbornet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 14:36:17 by qbornet           #+#    #+#             */
-/*   Updated: 2021/11/28 08:04:39 by qbornet          ###   ########.fr       */
+/*   Updated: 2021/11/29 21:29:03 by qbornet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TESTER_H
 # define TESTER_H
 # include "ft_printf.h"
+# include <limits.h>
 # include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
@@ -39,6 +40,8 @@
 		ft_puts((WEXITSTATUS(status) == SUCCESS) ? OK : KO); \
 	else if (WEXITSTATUS(status) == 0)\
 		ft_puts("child process exited with status equal to 0, creation failed"); \
+	else if (WEXITSTATUS(status) == 15) \
+		ft_puts("\e[1;38;5;11mSCASE\e[0m"); \
 	else \
 		ft_puts(KO)
 # define FORK_RAISE(g_pid, pid) \
@@ -92,4 +95,8 @@ void	ft_printf_X_1(void);
 void	ft_printf_X_2(void);
 void	ft_printf_X_3(void);
 void	ft_printf_X_4(void);
+void	ft_printf_mix_1(void);
+void	ft_printf_mix_2(void);
+void	ft_printf_mix_3(void);
+void	ft_printf_mix_4(void);
 #endif

@@ -166,6 +166,25 @@ void	ft_test_printf_X(void)
 	ft_putc('\n');
 }
 
+void	ft_test_printf_mix(void)
+{
+	ft_puts("\e[4mMIX\e[0m");
+	ft_puts(ALIGN);
+	ft_printf_mix_1();
+	waitpid(g_pid, &g_status, 0);
+	SHOW_RES(g_status);
+	ft_printf_mix_2();
+	waitpid(g_pid, &g_status, 0);
+	SHOW_RES(g_status);
+	ft_printf_mix_3();
+	waitpid(g_pid, &g_status, 0);
+	SHOW_RES(g_status);
+	ft_printf_mix_4();
+	waitpid(g_pid, &g_status, 0);
+	SHOW_RES(g_status);
+	ft_putc('\n');
+}
+
 int	main(void)
 {
 	ft_test_printf_c();
@@ -174,6 +193,7 @@ int	main(void)
 	ft_test_printf_di();
 	ft_test_printf_x();
 	ft_test_printf_X();
+	ft_test_printf_mix();
 	ft_test_return_printf();
 	return (0);
 }
