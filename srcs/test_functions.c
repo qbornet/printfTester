@@ -6,7 +6,7 @@
 /*   By: qbornet <qbornet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 16:09:47 by qbornet           #+#    #+#             */
-/*   Updated: 2021/11/28 08:16:15 by qbornet          ###   ########.fr       */
+/*   Updated: 2021/11/29 21:02:38 by qbornet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <tester.h>
@@ -490,7 +490,7 @@ void	ft_printf_x_1(void)
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("%x", nbr);
-	retr = ft_printf("%x", nbr);
+	retr = printf("%x", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
 	exit(FAIL);
@@ -505,7 +505,7 @@ void	ft_printf_x_2(void)
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("%x", nbr);
-	retr = ft_printf("%x", nbr);
+	retr = printf("%x", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
 	exit(FAIL);
@@ -519,7 +519,7 @@ void	ft_printf_x_3(void)
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("%x", nbr);
-	retr = ft_printf("%x", nbr);
+	retr = printf("%x", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
 	exit(FAIL);
@@ -534,7 +534,7 @@ void	ft_printf_x_4(void)
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("%x", nbr);
-	retr = ft_printf("%x", nbr);
+	retr = printf("%x", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
 	exit(FAIL);
@@ -549,7 +549,7 @@ void	ft_printf_X_1(void)
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("%X", nbr);
-	retr = ft_printf("%X", nbr);
+	retr = printf("%X", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
 	exit(FAIL);
@@ -564,7 +564,7 @@ void	ft_printf_X_2(void)
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("%X", nbr);
-	retr = ft_printf("%X", nbr);
+	retr = printf("%X", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
 	exit(FAIL);
@@ -579,7 +579,7 @@ void	ft_printf_X_3(void)
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("%X", nbr);
-	retr = ft_printf("%X", nbr);
+	retr = printf("%X", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
 	exit(FAIL);
@@ -594,7 +594,7 @@ void	ft_printf_X_4(void)
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("%X", nbr);
-	retr = ft_printf("%X", nbr);
+	retr = printf("%X", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
 	exit(FAIL);
