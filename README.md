@@ -10,7 +10,7 @@ This test your ft_printf function for 42 project it was made to test return valu
 
 ## Getting Started
 
-Simply clone into your ft_printf directories
+Simply clone into your ft_printf directories change make file variable PRINTFHEADER if needed
 
 ### Installing
 
