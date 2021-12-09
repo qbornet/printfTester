@@ -15,7 +15,7 @@ Simply clone into your ft_printf directories change make file variable PRINTFHEA
 ### Installing
 
 ```
-git clone git@github.com:qbornet/printfTester.git briseur2reves
+git clone https://github.com/qbornet/printfTester.git briseur2reves
 ```
 
 ### Executing program
