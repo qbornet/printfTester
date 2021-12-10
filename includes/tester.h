@@ -6,7 +6,7 @@
 /*   By: qbornet <qbornet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 14:36:17 by qbornet           #+#    #+#             */
-/*   Updated: 2021/11/29 21:29:03 by qbornet          ###   ########.fr       */
+/*   Updated: 2021/12/10 16:14:04 by qbornet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,26 @@
 # include <sys/wait.h>
 # include <fcntl.h>
 
-# ifdef __APPLE__
-# define MACOS 1
-# elif __linux__
-# define LINUX 1
-# endif
-
 # define CLOSE_OUT freopen("/dev/null/", "w", stdout);
 # define OPEN_OUT freopen("/dev/tty", "w", stdout);
 # define SUCCESS 10
+# define SKO 15
 # define FAIL 1
 # define OK " \e[1;38;5;10mOK\e[0m"
 # define KO " \e[1;38;5;9mKO\e[0m"
+# define SPKO " \e[1;38;5;11mSKO\e[0m"
 # define ALIGN "\e[20G:"
 # define SHOW_RES(status) \
 	OPEN_OUT; \
 	if (WIFEXITED(status) && (WEXITSTATUS(status) != 0)) \
-		ft_puts((WEXITSTATUS(status) == SUCCESS) ? OK : KO); \
+	{ \
+		if (WEXITSTATUS(status) == SKO) \
+			ft_puts(SPKO); \
+		else \
+			ft_puts((WEXITSTATUS(status) == SUCCESS) ? OK : KO); \
+	} \
 	else if (WEXITSTATUS(status) == 0)\
 		ft_puts("child process exited with status equal to 0, creation failed"); \
-	else if (WEXITSTATUS(status) == 15) \
-		ft_puts("\e[1;38;5;11mSCASE\e[0m"); \
 	else \
 		ft_puts(KO)
 # define FORK_RAISE(g_pid, pid) \

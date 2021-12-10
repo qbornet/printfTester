@@ -1,7 +1,7 @@
 SHELL	= /bin/zsh
 
 LIBFT_PRINTF = libftprintf.a
-PRINTFHEADER = 'ft_printf.h' # change with your .h name let the single quote
+PRINTFHEADER = '*.h' # change with your .h name let the single quote
 
 SRCS =	ft_putc.c ft_puts.c test_functions.c tester.c
 
@@ -13,14 +13,14 @@ CFLAGS = -Wall -Werror -Wextra -I ./includes -I .. $(addprefix -I, $(shell find 
 
 
 %.o:	%.c checkmakefile
-	make -C ..
+	make re -C ..
 	$(CC) $(CFLAGS) -c $< -o $@
 	echo "\e[4m$<\e[0m\e[30G\e[1;38;5;11m>\e[0m	\e[1;38;5;12m[\e[0m\e[1;38;5;11m$@\e[0m\e[1;38;5;12m]\e[0m"
 
 $(NAME):	$(OBJS)
 	$(CC) $(CFLAGS) -L.. $(OBJS) -o $@ -lftprintf
 	echo "\e[1;4mFINISHED\e[0m\n" && sleep 1 
-	echo "\ec\e[0m\e[5G\e[1;38;5;4m==========[PART1]==========\e[0m\n" && ./tester
+	echo "\ec\e[0m\e[5G\e[1;38;5;4m==========[PART1]==========\e[0m\n" && make fclean -C .. && ./tester
 
 all:	$(NAME)
 
@@ -43,6 +43,4 @@ checkmakefile: update
 
 .PHONY: all clean fclean re checkmakefile
 
-ifdef VERBOSE
 .SILENT:
-endif

@@ -6,7 +6,7 @@
 /*   By: qbornet <qbornet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 16:09:47 by qbornet           #+#    #+#             */
-/*   Updated: 2021/11/29 21:28:50 by qbornet          ###   ########.fr       */
+/*   Updated: 2021/12/10 16:02:06 by qbornet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <tester.h>
@@ -21,6 +21,8 @@ void	ft_return_printf_1(void)
 	ret = ft_printf("Hello");
 	if (ret == -1)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -34,6 +36,8 @@ void	ft_return_printf_2(void)
 	ret = ft_printf("%c, salut mon pote ta essayer de m'echapper", c);
 	if (ret == -1)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -48,6 +52,8 @@ void	ft_return_printf_3(void)
 	ret = ft_printf("%s, salut mon pote ta essayer de m'echapper", str);
 	if (ret == -1)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -62,6 +68,8 @@ void	ft_return_printf_4(void)
 	ret = ft_printf("%p, salut mon pote ta essayer de m'echapper", kekw);
 	if (ret == -1)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -75,6 +83,8 @@ void	ft_return_printf_5(void)
 	ret = ft_printf("%d, salut mon pote ta essayer de m'echapper", nb);
 	if (ret == -1)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -88,6 +98,8 @@ void	ft_return_printf_6(void)
 	ret = ft_printf("%i, salut mon pote ta essayer de m'echapper", nb);
 	if (ret == -1)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -102,6 +114,8 @@ void	ft_return_printf_7(void)
 	ret = ft_printf("%u, salut mon pote ta essayer de m'echapper", nb);
 	if (ret == -1)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -115,6 +129,8 @@ void	ft_return_printf_8(void)
 	ret = ft_printf("%x, salut mon pote ta essayer de m'echapper", nb);
 	if (ret == -1)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -129,6 +145,8 @@ void	ft_return_printf_9(void)
 	ret = ft_printf("%X, salut mon pote ta essayer de m'echapper", nb);
 	if (ret == -1)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -143,6 +161,8 @@ void	ft_return_printf_10(void)
 	retr = printf("\t\n\v\r\fiqwerty\r");
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -158,6 +178,8 @@ void	ft_printf_c_1(void)
 	retr = printf("%cqwerty", c);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -172,6 +194,8 @@ void	ft_printf_c_2(void)
 	retr = printf("%c", c);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -185,6 +209,8 @@ void	ft_printf_c_3(void)
 	retr = printf("%c", 128);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -198,6 +224,8 @@ void	ft_printf_c_4(void)
 	retr = printf("%c", 255);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -212,6 +240,8 @@ void	ft_printf_c_5(void)
 	retr = printf("%c", 0);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -226,6 +256,8 @@ void	ft_printf_s_1(void)
 	retr = printf("%s", s);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -241,6 +273,8 @@ void	ft_printf_s_2(void)
 	retr = printf("%s", s);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -255,6 +289,8 @@ void	ft_printf_s_3(void)
 	retr = printf("%s", s);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -270,6 +306,8 @@ void	ft_printf_s_4(void)
 	retr = printf("%s", s);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -284,6 +322,8 @@ void	ft_printf_s_5(void)
 	retr = printf("%s", s);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -299,6 +339,8 @@ void	ft_printf_s_6(void)
 	retr = printf("%s", s);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -314,6 +356,8 @@ void	ft_printf_s_7(void)
 	retr = printf("%s", s);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -329,6 +373,8 @@ void	ft_printf_p_1(void)
 	retr = printf("%p", s);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -344,6 +390,8 @@ void	ft_printf_p_2(void)
 	retr = printf("%p", s);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -359,6 +407,8 @@ void	ft_printf_p_3(void)
 	retr = printf("%p", &f_value);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -373,6 +423,8 @@ void	ft_printf_p_4(void)
 	retr = printf("%p", &f_value);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -388,6 +440,8 @@ void	ft_printf_di_1(void)
 	retr = printf("%d", value);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -403,6 +457,8 @@ void	ft_printf_di_2(void)
 	retr = printf("%i", value);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -418,6 +474,8 @@ void	ft_printf_di_3(void)
 	retr = printf("%d", value);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -433,6 +491,8 @@ void	ft_printf_di_4(void)
 	retr = printf("%i", value);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -448,6 +508,8 @@ void	ft_pritnf_u_1(void)
 	retr = printf("%u", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -463,6 +525,8 @@ void	ft_pritnf_u_2(void)
 	retr = printf("%u", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -478,6 +542,8 @@ void	ft_pritnf_u_3(void)
 	retr = printf("%u", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -493,6 +559,8 @@ void	ft_printf_x_1(void)
 	retr = printf("%x", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -508,6 +576,8 @@ void	ft_printf_x_2(void)
 	retr = printf("%x", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -522,6 +592,8 @@ void	ft_printf_x_3(void)
 	retr = printf("%x", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -537,6 +609,8 @@ void	ft_printf_x_4(void)
 	retr = printf("%x", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -552,6 +626,8 @@ void	ft_printf_X_1(void)
 	retr = printf("%X", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -567,6 +643,8 @@ void	ft_printf_X_2(void)
 	retr = printf("%X", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -582,6 +660,8 @@ void	ft_printf_X_3(void)
 	retr = printf("%X", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -597,6 +677,8 @@ void	ft_printf_X_4(void)
 	retr = printf("%X", nbr);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -610,6 +692,8 @@ void	ft_printf_mix_1(void)
 	retr = printf("%c, %p, %d", 'a' + 256, NULL, INT_MIN);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -623,6 +707,8 @@ void	ft_printf_mix_2(void)
 	retr = printf("%% %c %d %i %x", L'a', 1234, INT_MAX, 42);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -637,8 +723,8 @@ void	ft_printf_mix_3(void)
 	retr = printf("%s %c %s", str, 'a', str);
 	if (ret == retr)
 		exit(SUCCESS);
-	else if (ret >= -1)
-		exit(15);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
 
@@ -652,5 +738,7 @@ void	ft_printf_mix_4(void)
 	retr = printf("%x %X %d %i %u", 42, 42, INT_MIN, INT_MAX, -1);
 	if (ret == retr)
 		exit(SUCCESS);
+	else if (ret < 0)
+		exit(SKO);
 	exit(FAIL);
 }
