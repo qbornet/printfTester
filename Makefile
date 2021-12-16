@@ -1,7 +1,7 @@
 SHELL	= /bin/zsh
 
 LIBFT_PRINTF = libftprintf.a
-PRINTFHEADER = '*.h' # change with your .h name let the single quote
+PRINTFHEADER = 'ft_printf.h' # change with your .h name, let the single quote.
 
 SRCS =	ft_putc.c ft_puts.c test_functions.c tester.c
 
@@ -14,6 +14,7 @@ CFLAGS = -Wall -Werror -Wextra -I ./includes -I .. $(addprefix -I, $(shell find 
 
 %.o:	%.c checkmakefile
 	make re -C ..
+	sed -E -i 's/# include <placeholder>/# include <${PRINTFHEADER}>/g' includes/tester.h 2> /dev/null
 	$(CC) $(CFLAGS) -c $< -o $@
 	echo "\e[4m$<\e[0m\e[30G\e[1;38;5;11m>\e[0m	\e[1;38;5;12m[\e[0m\e[1;38;5;11m$@\e[0m\e[1;38;5;12m]\e[0m"
 
