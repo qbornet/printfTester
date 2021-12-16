@@ -15,13 +15,13 @@ Simply clone into your ft_printf directories change make file variable PRINTFHEA
 ### Installing
 
 ```
-git clone https://github.com/qbornet/printfTester.git briseur2reves
+echo 'briseur2reves' >> .gitignore && git clone https://github.com/qbornet/printfTester.git briseur2reves
 ```
 
 ### Executing program
 
 ```
-cd briseur2reves && make -s
+cd briseur2reves && make
 ```
 ## Authors
 
