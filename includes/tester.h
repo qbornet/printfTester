@@ -6,13 +6,13 @@
 /*   By: qbornet <qbornet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 14:36:17 by qbornet           #+#    #+#             */
-/*   Updated: 2021/12/10 16:14:04 by qbornet          ###   ########.fr       */
+/*   Updated: 2021/12/18 19:12:44 by qbornet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TESTER_H
 # define TESTER_H
-# include <placeholder>
+# include "placeholder"
 # include <limits.h>
 # include <stdio.h>
 # include <string.h>
@@ -30,7 +30,7 @@
 # define KO " \e[1;38;5;9mKO\e[0m"
 # define SPKO " \e[1;38;5;11mSKO\e[0m"
 # define ALIGN "\e[20G:"
-# define SHOW_RES(status) \
+# define SHOW_RES(status) { \
 	OPEN_OUT; \
 	if (WIFEXITED(status) && (WEXITSTATUS(status) != 0)) \
 	{ \
@@ -42,15 +42,19 @@
 	else if (WEXITSTATUS(status) == 0)\
 		ft_puts("child process exited with status equal to 0, creation failed"); \
 	else \
-		ft_puts(KO)
-# define FORK_RAISE(g_pid, pid) \
+		ft_puts(KO); \
+}
+
+# define FORK_RAISE(g_pid, pid) { \
 	if ((pid = fork()) < 0) \
 		exit(0); \
 	if (pid > 0) \
 	{ \
 		g_pid = pid; \
 		return ; \
-	}
+	} \
+}
+
 void	ft_puts(char *s);
 void	ft_putc(char c);
 void	ft_return_printf_1(void);
