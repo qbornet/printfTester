@@ -6,13 +6,13 @@
 /*   By: qbornet <qbornet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 14:36:17 by qbornet           #+#    #+#             */
-/*   Updated: 2021/12/18 19:12:44 by qbornet          ###   ########.fr       */
+/*   Updated: 2021/12/19 01:23:36 by qbornet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TESTER_H
 # define TESTER_H
-# include "placeholder"
+# include <ft_printf.h>
 # include <limits.h>
 # include <stdio.h>
 # include <string.h>
@@ -102,4 +102,5 @@ void	ft_printf_mix_1(void);
 void	ft_printf_mix_2(void);
 void	ft_printf_mix_3(void);
 void	ft_printf_mix_4(void);
+extern int	g_pid;
 #endif

@@ -6,11 +6,10 @@
 /*   By: qbornet <qbornet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 16:09:47 by qbornet           #+#    #+#             */
-/*   Updated: 2021/12/10 16:02:06 by qbornet          ###   ########.fr       */
+/*   Updated: 2021/12/19 01:23:44 by qbornet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <tester.h>
-extern int	g_pid;
 
 void	ft_return_printf_1(void)
 {
