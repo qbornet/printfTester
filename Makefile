@@ -42,6 +42,6 @@ update:
 checkmakefile: update
 	ls .. | grep Makefile > /dev/null 2>&1 || (tput setaf 1 && echo "Makefile not found." && exit 1)
 
-.PHONY: all clean fclean re checkmakefile
+.PHONY: all clean fclean re checkmakefile update
 
 .SILENT:
