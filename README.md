@@ -10,7 +10,7 @@ This test your ft_printf function for 42 project it was made to test return valu
 
 ## Getting Started
 
-Simply clone into your ft_printf directories and change Makefile variable PRINTFHEADER if needed
+Simply clone into your ft_printf directories and change Makefile variable `PRINTFHEADER` if needed
 
 ### Result
 
@@ -21,9 +21,14 @@ Simply clone into your ft_printf directories and change Makefile variable PRINTF
 | - ![#00ff00](https://via.placeholder.com/15/00ff00/000000?text=+) `#00ff00` | OK |
 
 
+
+
+### Installing
+
 ```
 echo 'briseur2reves' >> .gitignore && git clone https://github.com/qbornet/printfTester.git briseur2reves
 ```
+
 
 ### Executing program
 
@@ -31,7 +36,6 @@ echo 'briseur2reves' >> .gitignore && git clone https://github.com/qbornet/print
 cd briseur2reves && make
 ```
 
-### Installing
 
 
 ## Authors
