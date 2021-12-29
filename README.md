@@ -10,9 +10,16 @@ This test your ft_printf function for 42 project it was made to test return valu
 
 ## Getting Started
 
-Simply clone into your ft_printf directories change make file variable PRINTFHEADER if needed
+Simply clone into your ft_printf directories and change Makefile variable PRINTFHEADER if needed
 
-### Installing
+### Result
+
+| COLOR | MEANING | 
+| ------------- | ------------- |
+| - ![#ff0000](https://via.placeholder.com/15/ff0000/000000?text=+) `#ff0000` | You are not returning the right value |
+| - ![#ffff00](https://via.placeholder.com/15/ffff00/000000?text=+) `#ffff00` | Not really like the real printf but it's valide |
+| - ![#00ff00](https://via.placeholder.com/15/00ff00/000000?text=+) `#00ff00` | OK |
+
 
 ```
 echo 'briseur2reves' >> .gitignore && git clone https://github.com/qbornet/printfTester.git briseur2reves
@@ -23,7 +30,10 @@ echo 'briseur2reves' >> .gitignore && git clone https://github.com/qbornet/print
 ```
 cd briseur2reves && make
 ```
+
+### Installing
+
+
 ## Authors
 
 [@qbornet]
-[@ucieutat <3]
