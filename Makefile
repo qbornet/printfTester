@@ -1,5 +1,6 @@
 SHELL	= /bin/zsh
 
+SLEEP_VALUE = 1.25
 LIBFT_PRINTF = libftprintf.a
 PRINTFHEADER = 'ft_printf.h'# change with your .h name, let the single quote.
 
@@ -16,25 +17,30 @@ CFLAGS = -Wall -Werror -Wextra -I ./includes -I .. $(addprefix -I, $(shell find 
 	make re -C ..
 	sed -E -i 's/# include "placeholder"/# include <$(PRINTFHEADER)>/g' includes/tester.h 2> /dev/null
 	$(CC) $(CFLAGS) -c $< -o $@
-	echo "\e[4m$<\e[0m\e[30G\e[1;38;5;11m>\e[0m	\e[1;38;5;12m[\e[0m\e[1;38;5;11m$@\e[0m\e[1;38;5;12m]\e[0m"
+	echo -n "\\r\e[4m$<\e[0m\e[30G\e[1;38;5;11m>\e[0m	\e[1;38;5;12m[\e[0m\e[1;38;5;11m$@\e[0m\e[1;38;5;12m]\e[0m" && sleep 0.5
+	echo -n "\e[2K"
 
 $(NAME):	$(OBJS)
 	$(CC) $(CFLAGS) -L.. $(OBJS) -o $@ -lftprintf
-	echo "\e[1;4mFINISHED\e[0m\n" && sleep 1 
-	echo "\ec\e[0m\e[5G\e[1;38;5;4m==========[PART1]==========\e[0m\n" && make fclean -C .. && ./tester
+	echo -n "\\r\e[1;4mFINISHED\e[0m" && sleep $(SLEEP_VALUE)
+	echo -n "\\r\e[2K"
+	echo -n "\\r\e[0m\e[5G\e[1;38;5;4m==========[PART1]==========\e[0m\n" && make fclean -C .. && ./tester
 
 all:	$(NAME)
 
-clean:
+clean: clean_msg
 	rm -rf $(OBJS)
 	make clean -C ..
 
-fclean:	clean
+fclean:	clean clean_msg
 	rm -rf $(NAME)
 	make fclean -C ..
-	echo "\e[1;38;5;9m===== CLEANING OK =====\e[0m"
 
 re:	fclean all
+
+clean_msg:
+	echo -n "\\r\e[1;38;5;9m===== CLEANING OK =====\e[0m" && sleep $(SLEEP_VALUE)
+	echo -n "\\r\e[2K"
 
 update:
 	git pull > /dev/null 2>&1
@@ -42,6 +48,8 @@ update:
 checkmakefile: update
 	ls .. | grep Makefile > /dev/null 2>&1 || (tput setaf 1 && echo "Makefile not found." && exit 1)
 
-.PHONY: all clean fclean re checkmakefile update
+.PHONY: all clean fclean re checkmakefile update clean_msg
+
+
 
 .SILENT:
