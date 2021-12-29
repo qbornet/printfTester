@@ -16,9 +16,9 @@ Simply clone into your ft_printf directories and change Makefile variable `PRINT
 
 | COLOR | MEANING | 
 | ------------- | ------------- |
-| - ![#ff0000](https://via.placeholder.com/15/ff0000/000000?text=+) `#ff0000` | You are not returning the right value |
-| - ![#ffff00](https://via.placeholder.com/15/ffff00/000000?text=+) `#ffff00` | Not really like the real printf but it's valide |
-| - ![#00ff00](https://via.placeholder.com/15/00ff00/000000?text=+) `#00ff00` | OK |
+| - ![#ff0000](https://via.placeholder.com/15/ff0000/000000?text=+) `KO` | You are not returning the right value |
+| - ![#ffff00](https://via.placeholder.com/15/ffff00/000000?text=+) `SKO` | Not really like the real printf but it's valide |
+| - ![#00ff00](https://via.placeholder.com/15/00ff00/000000?text=+) `OK` | You are returning the right value |
 
 
 
