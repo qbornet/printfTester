@@ -4,7 +4,7 @@ PATH_HEADER=`find ../ -type f -name "$1" | grep -oh ".*\/"`
 if [ -n "$PATH_HEADER" ]
 then
 	echo -n '' > /tmp/tmpError
-	clang -Wall -Werror -Wextra -I "$PATH_HEADER" -L ../ script/wrapper.c -lftprintf 2> /tmp/tmpError; rm -rf ./a.out
+	clang -Wall -Werror -Wextra -I "$PATH_HEADER" -L ../ script/wrapper.c -lftprintf 2> /tmp/tmpError; rm -rf ./a.out 2>/dev/null
 	echo -n "\e[4mFORMAT ERROR\e[0m\e[20G:"
 	if [ -s "/tmp/tmpError" ]
 	then
