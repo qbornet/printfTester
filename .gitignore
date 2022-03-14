@@ -1,5 +1,7 @@
-*.[oa]
-tester
+*.[oad]
 *.sw*
 *.out
 *~
+.DS_Store
+tester
+tags
