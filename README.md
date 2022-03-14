@@ -6,7 +6,7 @@ This test your ft_printf function for 42 project it was made to test return valu
 - [paulo-santana/ft_printf_tester](https://github.com/paulo-santana/ft_printf_tester)
 
 
-![alt text](https://i.imgur.com/gzEx0AZ.png)
+![alt text](https://i.imgur.com/c0gTFGf.png)
 
 ## Getting Started
 
