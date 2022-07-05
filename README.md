@@ -1,4 +1,4 @@
-# briseur2reves (printfTester) (2021)
+# briseur2reves (printfTester) (2022)
 
 This test your ft_printf function for 42 project it was made to test return value of your printf function and only return value it doesn't check if you are writing properly if you want to check if your printf write properly i recommand:
 
@@ -16,9 +16,9 @@ Simply clone into your ft_printf directories and change Makefile variable `PRINT
 
 | COLOR | MEANING | 
 | ------------- | ------------- |
-| - ![#ff0000](https://via.placeholder.com/15/ff0000/000000?text=+) `KO` | You are not returning the right value |
-| - ![#ffff00](https://via.placeholder.com/15/ffff00/000000?text=+) `SKO` | Not really like the real printf but it's valide |
-| - ![#00ff00](https://via.placeholder.com/15/00ff00/000000?text=+) `OK` | You are returning the right value |
+| - ![#ff0000](https://via.placeholder.com/15/ff0000/ff0000.png) `KO` | You are not returning the right value |
+| - ![#ffff00](https://via.placeholder.com/15/ffff00/ffff00.png) `SKO` | Not really like the real printf but it's valide |
+| - ![#00ff00](https://via.placeholder.com/15/00ff00/00ff00.png) `OK` | You are returning the right value |
 
 
 
