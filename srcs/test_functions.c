@@ -13,155 +13,246 @@
 
 void	ft_return_printf_1(void)
 {
-	int	pid, ret;
+	int	pid, ret, printfRet;
+    FILE    *trace;
 
 	FORK_RAISE(g_pid, pid);
 	fclose(stdout);
+    trace = fopen("trace", "a");
 	ret = ft_printf("Hello");
+    printfRet = printf("Hello");
+    fprintf(trace, "[RETURN VALUE]\n<ft_printf, >printf\n");
 	if (ret == -1)
+    {
 		exit(SUCCESS);
+    }
 	else if (ret < 0)
+    {
+        fprintf(trace, "[1]: <%d | >%d\n", ret, printfRet);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[1]: <%d | >%d\n", ret, printfRet);
+    fclose(trace);
 	exit(FAIL);
 }
 
 void	ft_return_printf_2(void)
 {
-	int		pid, ret;
+	int		pid, ret,  printfRet;
 	char	c = 'c';
+    FILE    *trace;
 
 	FORK_RAISE(g_pid, pid);
 	fclose(stdout);
+    trace = fopen("trace", "a+");
 	ret = ft_printf("%c, salut mon pote ta essayer de m'echapper", c);
+    printfRet = printf("%c, salut mon pote ta essayer de m'echapper", c);
 	if (ret == -1)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[2]: <%d | >%d\n", ret, printfRet);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[2]: <%d | >%d\n", ret, printfRet);
+    fclose(trace);
 	exit(FAIL);
 }
 
 void	ft_return_printf_3(void)
 {
-	int 	pid, ret;
+	int 	pid, ret, printfRet;
+    FILE    *trace;
 	char	*str = "Hello";
 
 	
 	FORK_RAISE(g_pid, pid);
 	fclose(stdout);
+    trace = fopen("trace", "a");
 	ret = ft_printf("%s, salut mon pote ta essayer de m'echapper", str);
+    printfRet = printf("%s, salut mon pote ta essayer de m'echapper", str);
 	if (ret == -1)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[3]: <%d | >%d\n", ret, printfRet);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[3]: <%d | >%d\n", ret, printfRet);
+    fclose(trace);
 	exit(FAIL);
 }
 
 void	ft_return_printf_4(void)
 {
-	int		pid, ret;
+	int		pid, ret, printfRet;
 	char	*kekw = "KEKW";
+    FILE    *trace;
 
 	
 	FORK_RAISE(g_pid, pid);
 	fclose(stdout);
+    trace = fopen("trace", "a");
 	ret = ft_printf("%p, salut mon pote ta essayer de m'echapper", kekw);
+	printfRet = printf("%p, salut mon pote ta essayer de m'echapper", kekw);
 	if (ret == -1)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[4]: <%d | >%d\n", ret, printfRet);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[4]: <%d | >%d\n", ret, printfRet);
+    fclose(trace);
 	exit(FAIL);
 }
 
 void	ft_return_printf_5(void)
 {
-	int		pid, ret, nb = 10;
-
+	int		pid, ret, printfRet, nb = 10;
+    FILE    *trace;
 	
 	FORK_RAISE(g_pid, pid);
 	fclose(stdout);
+    trace = fopen("trace", "a");
 	ret = ft_printf("%d, salut mon pote ta essayer de m'echapper", nb);
+    printfRet = printf("%d, salut mon pote ta essayer de m'echapper", nb);
 	if (ret == -1)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[5]: <%d | >%d\n", ret, printfRet);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[5]: <%d | >%d\n", ret, printfRet);
+    fclose(trace);
 	exit(FAIL);
 }
 
 void	ft_return_printf_6(void)
 {
-	int		pid, ret, nb = 10;
+	int		pid, ret, printfRet, nb = 10;
+    FILE    *trace;
 
 	
 	FORK_RAISE(g_pid, pid);
 	fclose(stdout);
+    trace = fopen("trace", "a");
 	ret = ft_printf("%i, salut mon pote ta essayer de m'echapper", nb);
+	printfRet = printf("%i, salut mon pote ta essayer de m'echapper", nb);
 	if (ret == -1)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[6]: <%d | >%d\n", ret, printfRet);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[6]: <%d | >%d\n", ret, printfRet);
+    fclose(trace);
 	exit(FAIL);
 }
 
 void	ft_return_printf_7(void)
 {
-	int			pid, ret;
+	int			pid, ret, printfRet;
 	unsigned int nb = 10;
+    FILE        *trace;
 
 	
 	FORK_RAISE(g_pid, pid);
 	fclose(stdout);
+    trace = fopen("trace", "a");
 	ret = ft_printf("%u, salut mon pote ta essayer de m'echapper", nb);
+    printfRet = printf("%u, salut mon pote ta essayer de m'echapper", nb);
 	if (ret == -1)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[7]: <%d | >%d\n", ret, printfRet);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[7]: <%d | >%d\n", ret, printfRet);
+    fclose(trace);
 	exit(FAIL);
 }
 
 void	ft_return_printf_8(void)
 {
-	int		pid, ret, nb = 10;
+	int		pid, ret, printfRet, nb = 10;
+    FILE    *trace;
 
 	
 	FORK_RAISE(g_pid, pid);
 	fclose(stdout);
+    trace = fopen("trace", "a");
 	ret = ft_printf("%x, salut mon pote ta essayer de m'echapper", nb);
+	printfRet = printf("%x, salut mon pote ta essayer de m'echapper", nb);
 	if (ret == -1)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[8]: <%d | >%d\n", ret, printfRet);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[8]: <%d | >%d\n", ret, printfRet);
+    fclose(trace);
 	exit(FAIL);
 }
 
 void	ft_return_printf_9(void)
 {
 
-	int		pid, ret, nb = 10;
+	int		pid, ret, printfRet, nb = 10;
+    FILE    *trace;
 
-	
+
 	FORK_RAISE(g_pid, pid);
 	fclose(stdout);
+    trace = fopen("trace", "a");
 	ret = ft_printf("%X, salut mon pote ta essayer de m'echapper", nb);
+	printfRet = printf("%X, salut mon pote ta essayer de m'echapper", nb);
 	if (ret == -1)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[9]: <%d | >%d\n", ret, printfRet);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[9]: <%d | >%d\n", ret, printfRet);
+    fclose(trace);
 	exit(FAIL);
 }
 
 void	ft_return_printf_10(void)
 {
-	int	pid, ret, retr;
+	int	    pid, ret, printfRet;
+    FILE    *trace;
 
 	
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
+    trace = fopen("trace", "a");
 	ret = ft_printf("\t\n\v\r\fiqwerty\r");
-	retr = printf("\t\n\v\r\fiqwerty\r");
-	if (ret == retr)
+	printfRet = printf("\t\n\v\r\fiqwerty\r");
+	if (ret == printfRet)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[10]: <%d | >%d\n", ret, printfRet);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[10]: <%d | >%d\n", ret, printfRet);
+    fclose(trace);
 	exit(FAIL);
 }
 
@@ -169,16 +260,25 @@ void	ft_printf_c_1(void)
 {
 	int		pid, ret, retr;
 	char	c = 'a';
+    FILE    *trace;
 
 	
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
+    trace = fopen("trace", "a");
 	ret = ft_printf("%cqwerty", c);
 	retr = printf("%cqwerty", c);
+    fprintf(trace, "[%%c]\n<ft_printf, >printf\n");
 	if (ret == retr)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[1]: <%d | >%d\n", ret, retr);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[1]: <%d | >%d\n", ret, retr);
+    fclose(trace);
 	exit(FAIL);
 }
 
@@ -186,61 +286,93 @@ void	ft_printf_c_2(void)
 {
 	int		pid, ret, retr;
 	char	c = L'-';
+    FILE    *trace;
 
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
+    trace = fopen("trace", "a");
 	ret = ft_printf("%c", c);
 	retr = printf("%c", c);
 	if (ret == retr)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[2]: <%d | >%d\n", ret, retr);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[2]: <%d | >%d\n", ret, retr);
+    fclose(trace);
 	exit(FAIL);
 }
 
 void	ft_printf_c_3(void)
 {
 	int		pid, ret, retr;
+    FILE    *trace;
 
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("%c", 128);
 	retr = printf("%c", 128);
+    trace = fopen("trace", "a");
 	if (ret == retr)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[3]: <%d | >%d\n", ret, retr);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[3]: <%d | >%d\n", ret, retr);
+    fclose(trace);
 	exit(FAIL);
 }
 
 void	ft_printf_c_4(void)
 {
 	int		pid, ret, retr;
+    FILE    *trace;
 
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("%c", 255);
 	retr = printf("%c", 255);
+    trace = fopen("trace", "a");
 	if (ret == retr)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[4]: <%d | >%d\n", ret, retr);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[4]: <%d | >%d\n", ret, retr);
+    fclose(trace);
 	exit(FAIL);
 }
 
 void	ft_printf_c_5(void)
 {
 	int		pid, ret, retr;
+    FILE    *trace;
 
 	
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("%c", 0);
 	retr = printf("%c", 0);
+    trace = fopen("trace", "a");
 	if (ret == retr)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[5]: <%d | >%d\n", ret, retr);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[5]: <%d | >%d\n", ret, retr);
+    fclose(trace);
 	exit(FAIL);
 }
 
@@ -248,15 +380,24 @@ void	ft_printf_s_1(void)
 {
 	int		pid, ret, retr;
 	char	*s = "Yolo";
+    FILE    *trace;
 
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("%s", s);
 	retr = printf("%s", s);
+    trace = fopen("trace", "a");
+    fprintf(trace, "[%%s]\n<ft_printf, >printf\n");
 	if (ret == retr)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[1]: <%d | >%d\n", ret, retr);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[1]: <%d | >%d\n", ret, retr);
+    fclose(trace);
 	exit(FAIL);
 }
 
@@ -264,16 +405,24 @@ void	ft_printf_s_2(void)
 {
 	int		pid, ret, retr;
 	char	*s = NULL;
+    FILE    *trace;
 
 	
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("%s", s);
 	retr = printf("%s", s);
+    trace = fopen("trace", "a");
 	if (ret == retr)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[2]: <%d | >%d\n", ret, retr);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[2]: <%d | >%d\n", ret, retr);
+    fclose(trace);
 	exit(FAIL);
 }
 
@@ -281,15 +430,23 @@ void	ft_printf_s_3(void)
 {
 	int		pid, ret, retr;
 	char	*s = "";
+    FILE    *trace;
 
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("%s", s);
 	retr = printf("%s", s);
+    trace = fopen("trace", "a");
 	if (ret == retr)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[3]: <%d | >%d\n", ret, retr);
+        fclose(trace);
 		exit(SKO);
+    }
+    fprintf(trace, "[3]: <%d | >%d\n", ret, retr);
+    fclose(trace);
 	exit(FAIL);
 }
 
@@ -297,16 +454,22 @@ void	ft_printf_s_4(void)
 {
 	int		pid, ret, retr;
 	char	*s = "\u00A1\u00A2\xde\xfe";
+    FILE    *trace;
 
 	
 	CLOSE_OUT;
 	FORK_RAISE(g_pid, pid);
 	ret = ft_printf("%s", s);
 	retr = printf("%s", s);
+    trace = fopen("trace", "a");
 	if (ret == retr)
 		exit(SUCCESS);
 	else if (ret < 0)
+    {
+        fprintf(trace, "[3]: <%d | >%d\n", ret, retr);
+        fclose(trace);
 		exit(SKO);
+    }
 	exit(FAIL);
 }
 

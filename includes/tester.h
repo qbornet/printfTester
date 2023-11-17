@@ -30,19 +30,39 @@
 # define KO " \e[1;38;5;9mKO\e[0m"
 # define SPKO " \e[1;38;5;11mSKO\e[0m"
 # define ALIGN "\e[20G:"
-# define SHOW_RES(status) { \
+# define EXPLAIN_ERR(g_ok, error) { \
+    if (g_ok >= 1) \
+        ft_puts(error); \
+}
+# define SHOW_RES(g_ok, status) { \
 	OPEN_OUT; \
 	if (WIFEXITED(status) && (WEXITSTATUS(status) != 0)) \
 	{ \
 		if (WEXITSTATUS(status) == SKO) \
+        { \
+            g_ok = 2; \
 			ft_puts(SPKO); \
+        } \
 		else \
-			ft_puts((WEXITSTATUS(status) == SUCCESS) ? OK : KO); \
+        { \
+            if (WEXITSTATUS(status) == SUCCESS) { \
+                ft_puts(OK); \
+                g_ok = 1;\
+            } \
+            else \
+            { \
+                g_ok = 0;\
+                ft_puts(KO); \
+            } \
+        } \
 	} \
-	else if (WEXITSTATUS(status) == 0)\
+	else if (WEXITSTATUS(status) == 0) \
 		ft_puts("child process exited with status equal to 0, creation failed"); \
 	else \
+    { \
+        g_ok = 0; \
 		ft_puts(KO); \
+    } \
 }
 
 # define FORK_RAISE(g_pid, pid) { \
@@ -102,5 +122,6 @@ void	ft_printf_mix_1(void);
 void	ft_printf_mix_2(void);
 void	ft_printf_mix_3(void);
 void	ft_printf_mix_4(void);
+extern int  g_ok;
 extern int	g_pid;
 #endif

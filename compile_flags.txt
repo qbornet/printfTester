@@ -1,0 +1,6 @@
+-Wall
+-Werror
+-Wextra
+-I./../includes
+-I./includes
+-lftprintf
