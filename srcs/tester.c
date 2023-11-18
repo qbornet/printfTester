@@ -5,48 +5,38 @@ int	g_status;
 
 void	ft_test_return_printf(void)
 {
-	ft_return_printf_1();
-	waitpid(g_pid, &g_status, 0);
 	ft_puts("\e[4mRETURN VALUE\e[0m");
 	ft_puts(ALIGN);
+	ft_return_printf_1();
+	waitpid(g_pid, &g_status, 0);
 	SHOW_RES(g_ok, g_status);
-    EXPLAIN_ERR(g_ok, "You should return a specific number when stdout is close man 2 printf.\n");
 	ft_return_printf_2();
 	waitpid(g_pid, &g_status, 0);
 	SHOW_RES(g_ok, g_status);
-    EXPLAIN_ERR(g_ok, "You should return a specific number when stdout is close man 2 printf.\n");
 	ft_return_printf_3();
 	waitpid(g_pid, &g_status, 0);
 	SHOW_RES(g_ok, g_status);
-    EXPLAIN_ERR(g_ok, "You should return a specific number when stdout is close man 2 printf.\n");
 	ft_return_printf_4();
 	waitpid(g_pid, &g_status, 0);
 	SHOW_RES(g_ok, g_status);
-    EXPLAIN_ERR(g_ok, "You should return a specific number when stdout is close man 2 printf.\n");
 	ft_return_printf_5();
 	waitpid(g_pid, &g_status, 0);
 	SHOW_RES(g_ok, g_status);
-    EXPLAIN_ERR(g_ok, "You should return a specific number when stdout is close man 2 printf.\n");
 	ft_return_printf_6();
 	waitpid(g_pid, &g_status, 0);
 	SHOW_RES(g_ok, g_status);
-    EXPLAIN_ERR(g_ok, "You should return a specific number when stdout is close man 2 printf.\n");
 	ft_return_printf_7();
 	waitpid(g_pid, &g_status, 0);
 	SHOW_RES(g_ok, g_status);
-    EXPLAIN_ERR(g_ok, "You should return a specific number when stdout is close man 2 printf.\n");
 	ft_return_printf_8();
 	waitpid(g_pid, &g_status, 0);
 	SHOW_RES(g_ok, g_status);
-    EXPLAIN_ERR(g_ok, "You should return a specific number when stdout is close man 2 printf.\n");
 	ft_return_printf_9();
 	waitpid(g_pid, &g_status, 0);
 	SHOW_RES(g_ok, g_status);
-    EXPLAIN_ERR(g_ok, "You should return a specific number when stdout is close man 2 printf.\n");
 	ft_return_printf_10();
 	waitpid(g_pid, &g_status, 0);
 	SHOW_RES(g_ok, g_status);
-    EXPLAIN_ERR(g_ok, "You should return a specific number when stdout is close man 2 printf.\n");
 	ft_putc('\n');
 }
 
