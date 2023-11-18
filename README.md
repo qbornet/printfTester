@@ -36,44 +36,44 @@ echo 'briseur2reves' >> .gitignore && git clone https://github.com/qbornet/print
 cd briseur2reves && ./test.sh
 ```
 
-## Individual Test
+### Individual Test
 
-_[%c]_
+*[%c]*
 ```
 ./test.sh c
 ```
 
-_[%s]_
+*[%s]*
 ```
 ./test.sh s
 ```
 
-_[%p]_
+*[%p]*
 ```
 ./test.sh p
 ```
 
-_[%di]_
+*[%di]*
 ```
 ./test.sh di
 ```
 
-_[%x]_
+*[%x]*
 ```
 ./test.sh x
 ```
 
-_[%X]_
+*[%X]*
 ```
 ./test.sh X
 ```
 
-_[mix]_
+*[mix]*
 ```
 ./test.sh mix
 ```
 
-_[return]_
+*[return]*
 ```
 ./test.sh return
 ```
