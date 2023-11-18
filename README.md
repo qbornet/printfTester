@@ -17,7 +17,7 @@ Simply clone into your ft_printf directories and change Makefile variable `PRINT
 | COLOR | MEANING | 
 | ------------- | ------------- |
 | - ![#ff0000](https://via.placeholder.com/15/ff0000/ff0000.png) `KO` | You are not returning the right value |
-| - ![#ffff00](https://via.placeholder.com/15/ffff00/ffff00.png) `SKO` | Not really like the real printf but it's valide |
+| - ![#ffff00](https://via.placeholder.com/15/ffff00/ffff00.png) `SKO` | Not really like the real printf but it's valid |
 | - ![#00ff00](https://via.placeholder.com/15/00ff00/00ff00.png) `OK` | You are returning the right value |
 
 
@@ -33,10 +33,50 @@ echo 'briseur2reves' >> .gitignore && git clone https://github.com/qbornet/print
 ### Executing program
 
 ```
-cd briseur2reves && make
+cd briseur2reves && ./test.sh
 ```
 
+## Individual Test
 
+_[%c]_
+```
+./test.sh c
+```
+
+_[%s]_
+```
+./test.sh s
+```
+
+_[%p]_
+```
+./test.sh p
+```
+
+_[%di]_
+```
+./test.sh di
+```
+
+_[%x]_
+```
+./test.sh x
+```
+
+_[%X]_
+```
+./test.sh X
+```
+
+_[mix]_
+```
+./test.sh mix
+```
+
+_[return]_
+```
+./test.sh return
+```
 
 ## Authors
 

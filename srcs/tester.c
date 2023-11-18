@@ -186,15 +186,35 @@ void	ft_test_printf_mix(void)
 	ft_putc('\n');
 }
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	ft_test_printf_c();
-	ft_test_printf_s();
-	ft_test_printf_p();
-	ft_test_printf_di();
-	ft_test_printf_x();
-	ft_test_printf_X();
-	ft_test_printf_mix();
-	ft_test_return_printf();
-	return (0);
+    if (ac == 1) {
+        ft_test_printf_c();
+        ft_test_printf_s();
+        ft_test_printf_p();
+        ft_test_printf_di();
+        ft_test_printf_x();
+        ft_test_printf_X();
+        ft_test_printf_mix();
+        ft_test_return_printf();
+        return (0);
+    }
+
+    if (ac == 2 && !strcmp("c", av[1]))
+        ft_test_printf_c();
+    else if (ac == 2 && !strcmp("s", av[1]))
+        ft_test_printf_s();
+    else if (ac == 2 && !strcmp("p", av[1]))
+        ft_test_printf_p();
+    else if (ac == 2 && !strcmp("di", av[1]))
+        ft_test_printf_di();
+    else if (ac == 2 && !strcmp("x", av[1]))
+        ft_test_printf_x();
+    else if (ac == 2 && !strcmp("X", av[1]))
+        ft_test_printf_X();
+    else if (ac == 2 && !strcmp("mix", av[1]))
+        ft_test_printf_mix();
+    else if (ac == 2 && !strcmp("return", av[1]))
+        ft_test_return_printf();
+    return (0);
 }

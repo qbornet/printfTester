@@ -26,6 +26,54 @@ $(NAME):	$(OBJS)
 	@echo -n "\\r\e[2K"
 	@echo -n "\\r\e[0m\e[5G\e[1;38;5;4m==========[PART1]==========\e[0m\n" && rm -rf trace && ./tester && sh script/format_error.sh '$(PRINTFHEADER)' && make fclean -C ..
 
+c: $(OBJS)
+	@$(CC) $(CFLAGS) -L.. $(OBJS) -o $(NAME) -lftprintf
+	@echo -n "\\r\e[1;4mFINISHED\e[0m" && sleep $(SLEEP_VALUE)
+	@echo -n "\\r\e[2K"
+	@echo -n "\\r\e[0m\e[5G\e[1;38;5;4m==========[PART1]==========\e[0m\n" && rm -rf trace && ./tester c && sh script/format_error.sh '$(PRINTFHEADER)' && make fclean -C ..
+
+s: $(OBJS)
+	@$(CC) $(CFLAGS) -L.. $(OBJS) -o $(NAME) -lftprintf
+	@echo -n "\\r\e[1;4mFINISHED\e[0m" && sleep $(SLEEP_VALUE)
+	@echo -n "\\r\e[2K"
+	@echo -n "\\r\e[0m\e[5G\e[1;38;5;4m==========[PART1]==========\e[0m\n" && rm -rf trace && ./tester s && sh script/format_error.sh '$(PRINTFHEADER)' && make fclean -C ..
+
+p: $(OBJS)
+	@$(CC) $(CFLAGS) -L.. $(OBJS) -o $(NAME) -lftprintf
+	@echo -n "\\r\e[1;4mFINISHED\e[0m" && sleep $(SLEEP_VALUE)
+	@echo -n "\\r\e[2K"
+	@echo -n "\\r\e[0m\e[5G\e[1;38;5;4m==========[PART1]==========\e[0m\n" && rm -rf trace && ./tester p && sh script/format_error.sh '$(PRINTFHEADER)' && make fclean -C ..
+
+di: $(OBJS)
+	@$(CC) $(CFLAGS) -L.. $(OBJS) -o $(NAME) -lftprintf
+	@echo -n "\\r\e[1;4mFINISHED\e[0m" && sleep $(SLEEP_VALUE)
+	@echo -n "\\r\e[2K"
+	@echo -n "\\r\e[0m\e[5G\e[1;38;5;4m==========[PART1]==========\e[0m\n" && rm -rf trace && ./tester di && sh script/format_error.sh '$(PRINTFHEADER)' && make fclean -C ..
+
+x: $(OBJS)
+	@$(CC) $(CFLAGS) -L.. $(OBJS) -o $(NAME) -lftprintf
+	@echo -n "\\r\e[1;4mFINISHED\e[0m" && sleep $(SLEEP_VALUE)
+	@echo -n "\\r\e[2K"
+	@echo -n "\\r\e[0m\e[5G\e[1;38;5;4m==========[PART1]==========\e[0m\n" && rm -rf trace && ./tester x && sh script/format_error.sh '$(PRINTFHEADER)' && make fclean -C ..
+
+X: $(OBJS)
+	@$(CC) $(CFLAGS) -L.. $(OBJS) -o $(NAME) -lftprintf
+	@echo -n "\\r\e[1;4mFINISHED\e[0m" && sleep $(SLEEP_VALUE)
+	@echo -n "\\r\e[2K"
+	@echo -n "\\r\e[0m\e[5G\e[1;38;5;4m==========[PART1]==========\e[0m\n" && rm -rf trace && ./tester X && sh script/format_error.sh '$(PRINTFHEADER)' && make fclean -C ..
+
+mix: $(OBJS)
+	@$(CC) $(CFLAGS) -L.. $(OBJS) -o $(NAME) -lftprintf
+	@echo -n "\\r\e[1;4mFINISHED\e[0m" && sleep $(SLEEP_VALUE)
+	@echo -n "\\r\e[2K"
+	@echo -n "\\r\e[0m\e[5G\e[1;38;5;4m==========[PART1]==========\e[0m\n" && rm -rf trace && ./tester mix && sh script/format_error.sh '$(PRINTFHEADER)' && make fclean -C ..
+
+return: $(OBJS)
+	@$(CC) $(CFLAGS) -L.. $(OBJS) -o $(NAME) -lftprintf
+	@echo -n "\\r\e[1;4mFINISHED\e[0m" && sleep $(SLEEP_VALUE)
+	@echo -n "\\r\e[2K"
+	@echo -n "\\r\e[0m\e[5G\e[1;38;5;4m==========[PART1]==========\e[0m\n" && rm -rf trace && ./tester return && sh script/format_error.sh '$(PRINTFHEADER)' && make fclean -C ..
+
 all:	$(NAME)
 
 clean: clean_msg
